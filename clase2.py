@@ -6,7 +6,7 @@ student = {
     "age": 20,
     "gender": "male",
     "height": 1.80,
-    "weight": 80
+    "weight": 800
 }
 
 print(student)
