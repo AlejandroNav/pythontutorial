@@ -4,9 +4,11 @@ import math as m
 def explicar(mensaje):
     print(f"\n🔹 {mensaje}")
     input("Presiona Enter para continuar...\n")
-
+    
 explicar("Se creará un array de grados de 0 a 360 con paso de 1.")
+
 grados = np.array([i for i in range(0, 361, 1)], dtype='float')
+
 print("Array de grados:\n", grados)
 
 explicar("Se mostrará el valor de pi usando la librería math.")
@@ -19,6 +21,8 @@ print("Radianes equivalentes:\n", np_radianes)
 explicar("Calcularemos el seno de cada valor en radianes usando np.sin().")
 fsin = np.sin(np_radianes)
 print("Seno de cada radian:\n", fsin)
+
+
 
 explicar("Se creará una matriz 1D de radianes desde 0° a 180° con paso de 10°, y se usará np.radians().")
 radianesA = np.radians(np.array([i for i in range(0, 181, 10)], dtype='float'))
