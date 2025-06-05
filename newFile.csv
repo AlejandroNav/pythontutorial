@@ -1,0 +1,3 @@
+title,magnitude,date_time,cdi,mmi,alert,tsunami,sig,net,nst,dmin,gap,magType,depth,latitude,longitude,location,continent,country
+"M 6.5 - 42 km W of Sola, Vanuatu",6.5,16-08-2023 12:47,7,4,green,0,657,us,114,7.177,25.0,mww,192.955,-13.8814,167.158,"Sola, Vanuatu",,Vanuatu
+"M 6.5 - 43 km S of Intipucá, El Salvador",6.5,19-07-2023 00:22,8,6,yellow,0,775,us,92,0.679,40.0,mww,69.727,12.814,-88.1265,"Intipucá, El Salvador",,
