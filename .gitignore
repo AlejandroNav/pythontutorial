@@ -1,2 +1,5 @@
 
 /.venv
+.env
+query_tacos.sh
+llave.py
