@@ -10,16 +10,16 @@ from llave import GOOGLE_MAPS_API_KEY
 apiKey = GOOGLE_MAPS_API_KEY
 print(f"Using API key: {apiKey[:4]}***")
 
-# Step 1: Define the bounding area
+# Step 1: Definimos el area de la Ciudad de México
 lat_min, lng_min = 19.29099, -99.224607  # Southwest corner
 lat_max, lng_max = 19.521517, -99.036189  # Northeast corner
 
-# Step 2: Divide the area into a 15x15 grid (225 squares)
+# Step 2: Dividimos el area en una cuadrícula de 15x15
 grid_size = 15
 lat_step = (lat_max - lat_min) / grid_size
 lng_step = (lng_max - lng_min) / grid_size
 
-# Step 3: Headers and setup
+# Step 3:  Pereparamos los headers para la solicitud de la API
 headers = {
     "Content-Type": "application/json",
     "X-Goog-Api-Key": apiKey,
@@ -28,7 +28,7 @@ headers = {
 
 tacos_CDMX = []
 
-# Step 4: Loop over all grid squares and make requests with rate limiting
+# Step 4: for para cada celda de la cuadrícula, hacemos una solicitud a la API
 for i in range(grid_size):
     for j in range(grid_size):
         sw_lat = lat_min + i * lat_step
@@ -58,9 +58,11 @@ for i in range(grid_size):
             data=json.dumps(payload)
         )
 
-        if response.status_code == 200:
+        if response.status_code == 200: 
+            # Parse the JSON response
             data = response.json()
             for place in data.get("places", []):
+                # Con un for creamos una lista con los datos que queremos
                 tacos_CDMX.append({
                     "name": place.get("displayName", {}).get("text"),
                     "address": place.get("formattedAddress"),
@@ -69,7 +71,7 @@ for i in range(grid_size):
                     "rating": place.get("rating"),
                     "userRatingCount": place.get("userRatingCount"),
                     "priceLevel": place.get("priceLevel"),
-                    "website": place.get("generativeSummary")                    ,
+                    "website": place.get("generativeSummary"),
                     "genAI": place.get("websiteUri")
                 })
         else:
