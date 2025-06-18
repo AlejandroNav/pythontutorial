@@ -1,0 +1,38 @@
+import folium
+
+# Definir coordenadas de la zona (CDMX)
+lat_min, lng_min = 19.29099, -99.224607  # Esquina suroeste
+lat_max, lng_max = 19.521517, -99.036189  # Esquina noreste
+
+# Calcular centro del mapa
+center_lat = (lat_min + lat_max) / 2
+center_lng = (lng_min + lng_max) / 2
+
+# Crear el mapa
+mapa = folium.Map(location=[center_lat, center_lng], zoom_start=12)
+
+# Parámetros de la cuadrícula
+grid_size = 10
+lat_step = (lat_max - lat_min) / grid_size
+lng_step = (lng_max - lng_min) / grid_size
+
+# Dibujar la cuadrícula (sin etiquetas)
+for i in range(grid_size):
+    for j in range(grid_size):
+        sw_lat = lat_min + i * lat_step
+        sw_lng = lng_min + j * lng_step
+        ne_lat = sw_lat + lat_step
+        ne_lng = sw_lng + lng_step
+
+        bounds = [[sw_lat, sw_lng], [ne_lat, ne_lng]]
+        folium.Rectangle(
+            bounds=bounds,
+            color="black",
+            fill=False,
+            weight=1
+        ).add_to(mapa)
+
+# Guardar el archivo HTML
+map_file_path = "cuadricula_CDMX_sin_etiquetas.html"
+mapa.save(map_file_path)
+map_file_path
