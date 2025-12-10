@@ -3,6 +3,7 @@ import uuid # para crear id unicos
 # variables de Datos
 libros = [] # Una Lista. Guarda todos los libros como diccionarios.
 prestamos = [] # Lista que Guarda todos los préstamos (activos e históricos) como diccionarios.
+
 def agregar_libro(titulo,autor,tipo,copias=1):
     id_libro = str(uuid.uuid4())
     libros.append( {# append sirve papra meter una sola cosa a una lista, pero puede ser otra lista o un dic
