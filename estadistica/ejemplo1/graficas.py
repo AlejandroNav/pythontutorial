@@ -96,27 +96,21 @@ def tabla_sturges(datos: np.ndarray):
     k_real = 1 + np.log2(n)
     k = int(np.ceil(k_real))
 
-    # amplitud usando k entero (como suele hacerse)
-    ancho = int(np.ceil(rango / k))
+    # ✅ amplitud fija a 9 (como quieres)
+    ancho = 9
 
-    # ---- cortes estilo tu cuaderno ----
-    # empezamos en minimo, y vamos sumando 'ancho',
-    # pero ajustamos los bordes para que queden como 3,11,20,29...
-    edges = [minimo]
+    # ✅ bins estilo cuaderno: 3–11, 11–20, 20–29, 29–38, 38–47, 47–50
+    # Para lograr eso con ancho 9: los internos son +9 pero restando 1 a los bordes.
+    edges = [minimo]  # 3
     for _ in range(k - 1):
-        edges.append(edges[-1] + ancho)
-    edges.append(maximo)  # cerrar en el máximo exacto
-
-    # Ajuste para que coincida con tu hoja (11, 20, 29, 38, 47)
-    # Si el mínimo es 3 y ancho es 9, esto deja: 3,12,21...
-    # Tu hoja usa: 3,11,20... => restamos 1 a los bordes internos.
-    for i in range(1, len(edges) - 1):
+        edges.append(edges[-1] + ancho)  # 12, 21, 30, 39, 48
+    # Ajuste -1 a los bordes internos para que quede 11,20,29,38,47
+    for i in range(1, len(edges)):
         edges[i] -= 1
 
-    # Asegura monotonicidad (por si acaso)
-    edges = sorted(edges)
+    # Último borde = max exacto (50) pero con epsilon para que 50 entre con right=False
+    edges.append(edges[-1] + ancho)  # 56
 
-    # Intervalos: [a,b) excepto el último que incluye el máximo
     cats = pd.cut(datos, bins=edges, right=False, include_lowest=True)
     freq = pd.Series(cats).value_counts(sort=False)
 
@@ -161,12 +155,17 @@ def boxplot_columna_con_puntos(datos: np.ndarray, col: str, carpeta_salida: str)
     plt.close()
     print(f"✓ boxplot_puntos_{col}.png")
 
-def histograma_sturges(datos: np.ndarray, edges, col: str, carpeta_salida: str):
-    plt.figure(figsize=(6, 4))
-    plt.hist(datos, bins=edges)
+def histograma_sturges(tabla: pd.DataFrame, col: str, carpeta_salida: str):
+    # tabla tiene: Intervalo, Frecuencia
+    etiquetas = tabla["Intervalo"].astype(str).tolist()
+    frecuencias = tabla["Frecuencia"].to_numpy()
+
+    plt.figure(figsize=(10, 4))
+    plt.bar(range(len(frecuencias)), frecuencias)
     plt.title(f"Histograma (Sturges) - {col}")
-    plt.xlabel(col)
+    plt.xlabel("Intervalos")
     plt.ylabel("Frecuencia")
+    plt.xticks(range(len(etiquetas)), etiquetas, rotation=45, ha="right")
     plt.tight_layout()
 
     ruta = os.path.join(carpeta_salida, f"hist_sturges_{col}.png")
@@ -182,8 +181,8 @@ def main():
 
     carpeta_salida = "resultados"
     os.makedirs(carpeta_salida, exist_ok=True)
-
-    df = leer_csv_o_ejemplo("datos.csv")
+ # ACA SELEE EL CSV
+    df = leer_csv_o_ejemplo("edades.csv")
     df_num = convertir_a_numerico(df)
 
     cols = columnas_numericas(df_num)
@@ -218,8 +217,7 @@ def main():
         # --- Gráficas ---
         boxplot_columna(datos, col, carpeta_salida)
         boxplot_columna_con_puntos(datos, col, carpeta_salida)
-        histograma_sturges(datos, edges, col, carpeta_salida)
-
+        histograma_sturges(tabla, col, carpeta_salida)
     print("-" * 55)
     print(f"Gráficas guardadas en: ./{carpeta_salida}/")
 
