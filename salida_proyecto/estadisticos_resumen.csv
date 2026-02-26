@@ -1,0 +1,2 @@
+n,minimo,Q1,Q2,Q3,Q4,maximo,rango,RIC,media,mediana,varianza_muestral,varianza_poblacional,limite_inferior_atipicos,limite_superior_atipicos,bigote_inferior_real,bigote_superior_real,num_atipicos,num_sin_atipicos
+20,16.0,17.0,21.0,25.0,28.0,28.0,12.0,8.0,21.45,21.0,17.734210526315792,16.847500000000004,5.0,37.0,16.0,28.0,0,20
