@@ -83,6 +83,10 @@ def limites_tukey(q1: float, q3: float) -> tuple[float, float, float]:
 def atipicos_por_limites(datos: np.ndarray, lim_inf: float, lim_sup: float) -> np.ndarray:
     return datos[(datos < lim_inf) | (datos > lim_sup)]
 
+def quitar_atipicos(datos: np.ndarray, lim_inf: float, lim_sup: float) -> np.ndarray:
+    """Esto sí 'quita' atípicos (como en tu imagen) y permite recalcular cuartiles."""
+    return datos[(datos >= lim_inf) & (datos <= lim_sup)]
+
 # ============================================================
 # 3) STURGES (k, amplitud, intervalos, frecuencias)
 # ============================================================
@@ -96,20 +100,14 @@ def tabla_sturges(datos: np.ndarray):
     k_real = 1 + np.log2(n)
     k = int(np.ceil(k_real))
 
-    # ✅ amplitud fija a 9 (como quieres)
-    ancho = 9
+    ancho = int(np.ceil(rango / k)) if k > 0 else 1
+    if ancho == 0:
+        ancho = 1
 
-    # ✅ bins estilo cuaderno: 3–11, 11–20, 20–29, 29–38, 38–47, 47–50
-    # Para lograr eso con ancho 9: los internos son +9 pero restando 1 a los bordes.
-    edges = [minimo]  # 3
-    for _ in range(k - 1):
-        edges.append(edges[-1] + ancho)  # 12, 21, 30, 39, 48
-    # Ajuste -1 a los bordes internos para que quede 11,20,29,38,47
-    for i in range(1, len(edges)):
-        edges[i] -= 1
+    edges = [minimo + i * ancho for i in range(k + 1)]
 
-    # Último borde = max exacto (50) pero con epsilon para que 50 entre con right=False
-    edges.append(edges[-1] + ancho)  # 56
+    if edges[-1] <= maximo:
+        edges[-1] = maximo + 1e-9
 
     cats = pd.cut(datos, bins=edges, right=False, include_lowest=True)
     freq = pd.Series(cats).value_counts(sort=False)
@@ -124,54 +122,53 @@ def tabla_sturges(datos: np.ndarray):
 # ============================================================
 # 4) BOXPLOTS + HISTOGRAMA (guardar en carpeta resultados)
 # ============================================================
-def boxplot_columna(datos: np.ndarray, col: str, carpeta_salida: str):
+def boxplot_columna(datos: np.ndarray, col: str, carpeta_salida: str, sufijo: str, showfliers: bool = True):
     plt.figure(figsize=(3, 10))
-    plt.boxplot(datos, vert=True, widths=0.35)
-    plt.title(f"Boxplot - {col}")
+    plt.boxplot(datos, vert=True, widths=0.35, showfliers=showfliers)
+    plt.title(f"Boxplot ({sufijo}) - {col}")
     plt.ylabel(col)
     plt.xticks([1], [col])
     plt.tight_layout()
 
-    ruta = os.path.join(carpeta_salida, f"boxplot_{col}.png")
+    ruta = os.path.join(carpeta_salida, f"boxplot_{col}_{sufijo}.png")
     plt.savefig(ruta, dpi=150)
     plt.close()
-    print(f"✓ boxplot_{col}.png")
+    print(f"✓ boxplot_{col}_{sufijo}.png")
 
-def boxplot_columna_con_puntos(datos: np.ndarray, col: str, carpeta_salida: str):
+def boxplot_columna_con_puntos(datos: np.ndarray, col: str, carpeta_salida: str, sufijo: str, showfliers: bool = True):
     plt.figure(figsize=(3, 10))
-    plt.boxplot(datos, vert=True, widths=0.35)
+    plt.boxplot(datos, vert=True, widths=0.35, showfliers=showfliers)
 
     rng = np.random.default_rng(42)
     x = 1 + rng.normal(0, 0.03, size=len(datos))
     plt.scatter(x, datos, alpha=0.7, s=18, zorder=3)
 
-    plt.title(f"Boxplot + puntos - {col}")
+    plt.title(f"Boxplot + puntos ({sufijo}) - {col}")
     plt.ylabel(col)
     plt.xticks([1], [col])
     plt.tight_layout()
 
-    ruta = os.path.join(carpeta_salida, f"boxplot_puntos_{col}.png")
+    ruta = os.path.join(carpeta_salida, f"boxplot_puntos_{col}_{sufijo}.png")
     plt.savefig(ruta, dpi=150)
     plt.close()
-    print(f"✓ boxplot_puntos_{col}.png")
+    print(f"✓ boxplot_puntos_{col}_{sufijo}.png")
 
-def histograma_sturges(tabla: pd.DataFrame, col: str, carpeta_salida: str):
-    # tabla tiene: Intervalo, Frecuencia
+def histograma_sturges(tabla: pd.DataFrame, col: str, carpeta_salida: str, sufijo: str):
     etiquetas = tabla["Intervalo"].astype(str).tolist()
     frecuencias = tabla["Frecuencia"].to_numpy()
 
     plt.figure(figsize=(10, 4))
     plt.bar(range(len(frecuencias)), frecuencias)
-    plt.title(f"Histograma (Sturges) - {col}")
+    plt.title(f"Histograma (Sturges) ({sufijo}) - {col}")
     plt.xlabel("Intervalos")
     plt.ylabel("Frecuencia")
     plt.xticks(range(len(etiquetas)), etiquetas, rotation=45, ha="right")
     plt.tight_layout()
 
-    ruta = os.path.join(carpeta_salida, f"hist_sturges_{col}.png")
+    ruta = os.path.join(carpeta_salida, f"hist_sturges_{col}_{sufijo}.png")
     plt.savefig(ruta, dpi=150)
     plt.close()
-    print(f"✓ hist_sturges_{col}.png")
+    print(f"✓ hist_sturges_{col}_{sufijo}.png")
 
 # ============================================================
 # 5) MAIN
@@ -181,7 +178,8 @@ def main():
 
     carpeta_salida = "resultados"
     os.makedirs(carpeta_salida, exist_ok=True)
- # ACA SELEE EL CSV
+
+    # ACA SELEE EL CSV
     df = leer_csv_o_ejemplo("edades.csv")
     df_num = convertir_a_numerico(df)
 
@@ -193,7 +191,7 @@ def main():
         datos = preparar_datos_columna(df_num, col)
         n = len(datos)
 
-        # --- Tukey + atípicos ---
+        # --- Tukey + atípicos (con TODOS los datos) ---
         q1, q2, q3 = cuartiles_tukey(datos)
         ric, lim_inf, lim_sup = limites_tukey(q1, q3)
         atipicos = atipicos_por_limites(datos, lim_inf, lim_sup)
@@ -206,18 +204,53 @@ def main():
         print("Límites:", lim_inf, lim_sup)
         print("Atípicos:", atipicos.tolist() if len(atipicos) else "No hay")
 
-        # --- Sturges ---
+        # --- DATOS SIN ATÍPICOS (como en tu imagen) ---
+        datos_sin = quitar_atipicos(datos, lim_inf, lim_sup)
+
+        print("\nQuitando atípicos:")
+        print("n_sin_atipicos:", len(datos_sin))
+        if len(datos_sin) > 0:
+            q1s, q2s, q3s = cuartiles_tukey(datos_sin)
+            rics, linfs, lsups = limites_tukey(q1s, q3s)
+            print("Q1:", q1s, "Q2:", q2s, "Q3:", q3s)
+            print("RIC:", rics)
+            print("Límites (recalculados):", linfs, lsups)
+
+        # --- Sturges (con datos completos) ---
         k_real, k, ancho, minimo, maximo, rango, edges, tabla = tabla_sturges(datos)
-        print("\nSturges:")
+        print("\nSturges (con atípicos):")
         print("Min:", minimo, "Max:", maximo, "Rango:", rango)
         print("k_real:", k_real, "=> k:", k)
         print("Amplitud:", ancho)
         print(tabla.to_string(index=False))
 
+        # --- Sturges (sin atípicos, opcional) ---
+        if len(datos_sin) >= 2:
+            k_real2, k2, ancho2, min2, max2, rango2, edges2, tabla2 = tabla_sturges(datos_sin)
+            print("\nSturges (sin atípicos):")
+            print("Min:", min2, "Max:", max2, "Rango:", rango2)
+            print("k_real:", k_real2, "=> k:", k2)
+            print("Amplitud:", ancho2)
+            print(tabla2.to_string(index=False))
+        else:
+            tabla2 = None
+
         # --- Gráficas ---
-        boxplot_columna(datos, col, carpeta_salida)
-        boxplot_columna_con_puntos(datos, col, carpeta_salida)
-        histograma_sturges(tabla, col, carpeta_salida)
+        # 1) Con atípicos (normal)
+        boxplot_columna(datos, col, carpeta_salida, "con_atipicos", showfliers=True)
+        boxplot_columna_con_puntos(datos, col, carpeta_salida, "con_atipicos", showfliers=True)
+        histograma_sturges(tabla, col, carpeta_salida, "con_atipicos")
+
+        # 2) Sin atípicos (recalculado, como tu imagen)
+        if len(datos_sin) > 0:
+            boxplot_columna(datos_sin, col, carpeta_salida, "sin_atipicos", showfliers=True)
+            boxplot_columna_con_puntos(datos_sin, col, carpeta_salida, "sin_atipicos", showfliers=True)
+            if tabla2 is not None:
+                histograma_sturges(tabla2, col, carpeta_salida, "sin_atipicos")
+
+        # 3) Extra: si SOLO quieres ocultar los fliers sin filtrar (NO recalcula caja)
+        # boxplot_columna(datos, col, carpeta_salida, "ocultando_fliers", showfliers=False)
+
     print("-" * 55)
     print(f"Gráficas guardadas en: ./{carpeta_salida}/")
 
