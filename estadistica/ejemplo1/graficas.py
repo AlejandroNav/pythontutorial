@@ -180,7 +180,7 @@ def main():
     os.makedirs(carpeta_salida, exist_ok=True)
 
     # ACA SELEE EL CSV
-    df = leer_csv_o_ejemplo("edades.csv")
+    df = leer_csv_o_ejemplo("prub0.csv")
     df_num = convertir_a_numerico(df)
 
     cols = columnas_numericas(df_num)
