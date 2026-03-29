@@ -84,7 +84,7 @@ def atipicos_por_limites(datos: np.ndarray, lim_inf: float, lim_sup: float) -> n
     return datos[(datos < lim_inf) | (datos > lim_sup)]
 
 def quitar_atipicos(datos: np.ndarray, lim_inf: float, lim_sup: float) -> np.ndarray:
-    """Esto sí 'quita' atípicos (como en tu imagen) y permite recalcular cuartiles."""
+    """Quita atípicos (filtra) y regresa solo los que están dentro de los límites."""
     return datos[(datos >= lim_inf) & (datos <= lim_sup)]
 
 # ============================================================
@@ -105,7 +105,6 @@ def tabla_sturges(datos: np.ndarray):
         ancho = 1
 
     edges = [minimo + i * ancho for i in range(k + 1)]
-
     if edges[-1] <= maximo:
         edges[-1] = maximo + 1e-9
 
@@ -135,24 +134,6 @@ def boxplot_columna(datos: np.ndarray, col: str, carpeta_salida: str, sufijo: st
     plt.close()
     print(f"✓ boxplot_{col}_{sufijo}.png")
 
-def boxplot_columna_con_puntos(datos: np.ndarray, col: str, carpeta_salida: str, sufijo: str, showfliers: bool = True):
-    plt.figure(figsize=(3, 10))
-    plt.boxplot(datos, vert=True, widths=0.35, showfliers=showfliers)
-
-    rng = np.random.default_rng(42)
-    x = 1 + rng.normal(0, 0.03, size=len(datos))
-    plt.scatter(x, datos, alpha=0.7, s=18, zorder=3)
-
-    plt.title(f"Boxplot + puntos ({sufijo}) - {col}")
-    plt.ylabel(col)
-    plt.xticks([1], [col])
-    plt.tight_layout()
-
-    ruta = os.path.join(carpeta_salida, f"boxplot_puntos_{col}_{sufijo}.png")
-    plt.savefig(ruta, dpi=150)
-    plt.close()
-    print(f"✓ boxplot_puntos_{col}_{sufijo}.png")
-
 def histograma_sturges(tabla: pd.DataFrame, col: str, carpeta_salida: str, sufijo: str):
     etiquetas = tabla["Intervalo"].astype(str).tolist()
     frecuencias = tabla["Frecuencia"].to_numpy()
@@ -179,8 +160,7 @@ def main():
     carpeta_salida = "resultados"
     os.makedirs(carpeta_salida, exist_ok=True)
 
-    # ACA SELEE EL CSV
-    df = leer_csv_o_ejemplo("prub0.csv")
+    df = leer_csv_o_ejemplo("Prub1.csv")
     df_num = convertir_a_numerico(df)
 
     cols = columnas_numericas(df_num)
@@ -189,7 +169,6 @@ def main():
 
     for col in cols:
         datos = preparar_datos_columna(df_num, col)
-        n = len(datos)
 
         # --- Tukey + atípicos (con TODOS los datos) ---
         q1, q2, q3 = cuartiles_tukey(datos)
@@ -198,23 +177,21 @@ def main():
 
         print("-" * 55)
         print("Columna:", col)
-        print("n:", n)
+        print("n:", len(datos))
         print("Q1:", q1, "Q2:", q2, "Q3:", q3)
         print("RIC:", ric)
         print("Límites:", lim_inf, lim_sup)
         print("Atípicos:", atipicos.tolist() if len(atipicos) else "No hay")
 
-        # --- DATOS SIN ATÍPICOS (como en tu imagen) ---
+        # --- DATOS SIN ATÍPICOS (FILTRADO REAL) ---
         datos_sin = quitar_atipicos(datos, lim_inf, lim_sup)
 
-        print("\nQuitando atípicos:")
+        # Debug útil: qué se quitó y qué quedó
+        quitados = datos[(datos < lim_inf) | (datos > lim_sup)]
+        print("\nQuitando atípicos (lista que queda):")
+        print(datos_sin.tolist())
+        print("Valores quitados:", quitados.tolist() if len(quitados) else "Ninguno")
         print("n_sin_atipicos:", len(datos_sin))
-        if len(datos_sin) > 0:
-            q1s, q2s, q3s = cuartiles_tukey(datos_sin)
-            rics, linfs, lsups = limites_tukey(q1s, q3s)
-            print("Q1:", q1s, "Q2:", q2s, "Q3:", q3s)
-            print("RIC:", rics)
-            print("Límites (recalculados):", linfs, lsups)
 
         # --- Sturges (con datos completos) ---
         k_real, k, ancho, minimo, maximo, rango, edges, tabla = tabla_sturges(datos)
@@ -224,7 +201,8 @@ def main():
         print("Amplitud:", ancho)
         print(tabla.to_string(index=False))
 
-        # --- Sturges (sin atípicos, opcional) ---
+        # --- Sturges (sin atípicos) ---
+        tabla2 = None
         if len(datos_sin) >= 2:
             k_real2, k2, ancho2, min2, max2, rango2, edges2, tabla2 = tabla_sturges(datos_sin)
             print("\nSturges (sin atípicos):")
@@ -232,24 +210,17 @@ def main():
             print("k_real:", k_real2, "=> k:", k2)
             print("Amplitud:", ancho2)
             print(tabla2.to_string(index=False))
-        else:
-            tabla2 = None
 
         # --- Gráficas ---
-        # 1) Con atípicos (normal)
+        # 1) Boxplot CON atípicos
         boxplot_columna(datos, col, carpeta_salida, "con_atipicos", showfliers=True)
-        boxplot_columna_con_puntos(datos, col, carpeta_salida, "con_atipicos", showfliers=True)
         histograma_sturges(tabla, col, carpeta_salida, "con_atipicos")
 
-        # 2) Sin atípicos (recalculado, como tu imagen)
+        # 2) Boxplot SIN atípicos (ya filtrados)
         if len(datos_sin) > 0:
-            boxplot_columna(datos_sin, col, carpeta_salida, "sin_atipicos", showfliers=True)
-            boxplot_columna_con_puntos(datos_sin, col, carpeta_salida, "sin_atipicos", showfliers=True)
+            boxplot_columna(datos_sin, col, carpeta_salida, "sin_atipicos", showfliers=False)
             if tabla2 is not None:
                 histograma_sturges(tabla2, col, carpeta_salida, "sin_atipicos")
-
-        # 3) Extra: si SOLO quieres ocultar los fliers sin filtrar (NO recalcula caja)
-        # boxplot_columna(datos, col, carpeta_salida, "ocultando_fliers", showfliers=False)
 
     print("-" * 55)
     print(f"Gráficas guardadas en: ./{carpeta_salida}/")

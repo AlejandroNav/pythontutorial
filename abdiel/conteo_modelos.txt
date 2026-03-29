@@ -1,0 +1,239 @@
+Modelo	count
+iPhone 14	17
+iPhone 13	15
+iPhone 11	12
+Galaxy A54	12
+iPhone 12	11
+iPhone 15	10
+iPhone 16	10
+Galaxy A56	10
+iPhone 15 pro max	9
+Galaxy S24	9
+Galaxy S24 Ultra	9
+iPhone 17	8
+iPhone 17 pro max	8
+Galaxy A55	8
+iPhone 14 pro	7
+iPhone 16 pro max	6
+iPhone 16 pro	6
+Galaxy S23 Ultra	6
+iPhone 15 pro	5
+Galaxy A52	5
+Galaxy S25 Ultra	5
+Poco x6 pro	4
+Poco x7 pro	4
+Galaxy S23 FE	4
+Redmi note 11	4
+Galaxy S24 FE	4
+Galaxy S25	4
+iPhone 13 pro max	3
+Galaxy A15	3
+Galaxy A14	3
+Galaxy A16	3
+Realme 12+	3
+POCO C65	3
+Galaxy A35	3
+Galaxy A53	3
+Poco F7	3
+Oppo reno 12	3
+iPhone XR	3
+Galaxy S23	3
+Redmi note 13 pro	3
+Redmi Note 14 Pro	3
+Galaxy Z Flip 6	3
+Infinix	2
+Moto edge 30 neo	2
+Galaxy A03S	2
+Reno 14	2
+Honor 400 lite	2
+Mi 11T	2
+Moto g50	2
+Poco m5s	2
+Honor x8b	2
+Galaxy A34	2
+G84	2
+iphone 15 pro max	2
+Galaxy A36	2
+iPhone 16 e	2
+Poco F5 Pro	2
+Galaxy A50	2
+iPhone SE 2022	2
+X8A	2
+Poco X5	2
+Edge 40 Neo	2
+IPhone 11	2
+Poco x7	2
+Moto g15	2
+Galaxy S20+	2
+Galaxy S21	2
+Honor magic 6 lite	2
+iPhone 14 pro max	2
+Redmi note 11 pro	2
+Redmi note 12 pro	2
+Oppo A40	2
+Oppo reno 14 f	2
+Oppo Reno 10	2
+Redmi note 13	2
+Galaxy S24+	2
+Galaxy S25 FE	2
+Honor X7a	1
+14T Pro	1
+Cubot P80	1
+G60s	1
+G31	1
+motorola edge 30	1
+Galaxy A04	1
+pixel 9 pro XL	1
+nubia Neo 2 5G	1
+Moto G60	1
+Galaxy A06	1
+Realme C75	1
+HUAWEI Y9a	1
+Galaxy A07	1
+Pixel 6a	1
+Galaxy A12	1
+Galaxy A13	1
+A79	1
+Y28	1
+Note 10s	1
+Note 12s	1
+Galaxy A17	1
+Galaxy A25	1
+Note 13 pro	1
+Galaxy A32	1
+Note S10	1
+M3pro 5g	1
+Reno f13	1
+Moto G54 Plus	1
+moto g82 5G	1
+A5 Pro	1
+motorola edge 60 fusion	1
+Nova Y60	1
+Galaxy A51	1
+V30 lite	1
+iPhone 13 pro	1
+Poco F6	1
+IPhone 13	1
+moto g56 5G	1
+Poco F6 Pro	1
+moto g05	1
+Galaxy A52 S	1
+Honor Xc8	1
+Moto g53	1
+S25 Ultra	1
+Pixel 9	1
+Reno 7	1
+Realame 9i	1
+Nova 13	1
+Pixel 6	1
+Poco M6 Pro	1
+Poco x3	1
+A58	1
+Poco X3 pro	1
+G7	1
+Poco X4	1
+EDGE 60 PLUS	1
+Nubia Neo 2 G5	1
+Nova 13 Pro	1
+iPhone Air	1
+Edge 20	1
+moto g54	1
+Poco X5 Pro	1
+X6	1
+Nothing Phone 3a	1
+g13	1
+Pixel 7	1
+Moto G55	1
+Motorola edge 40 pro	1
+Huawei P60 Pro	1
+G24	1
+Poco M5S	1
+Motorola G57	1
+IPhone 16	1
+Oppo reno lite 2	1
+Oppo A78	1
+Blade A54	1
+Mate pad 11.5	1
+Galaxy A60	1
+Galaxy A71	1
+Honor 50	1
+Galaxy M53	1
+G42	1
+POCO X9 pro	1
+Poco	1
+Honor magic 8 lite	1
+Honor X6C	1
+POCO	1
+Galaxy M55	1
+Galaxy Note 9	1
+iPhone 11 pro	1
+Poco M7 pro	1
+Galaxy S10	1
+Honor magic 5 lite	1
+A15	1
+Motorola G34	1
+A56	1
+Honor X6b	1
+Galaxy S21 FE	1
+Moto edge 50 fusion	1
+VI65PB1401NA	1
+RMO-NX3	1
+Redmi 10	1
+Redmi 10 pro	1
+Galaxy S22	1
+Honor 300	1
+Nothing Phone	1
+Galaxy S22 Ultra	1
+Redmi 13 pro	1
+Redmi 13c	1
+Redmi 14	1
+iphone 14 pro max	1
+g 04	1
+Redmi 14C	1
+Redmi 15	1
+Redmi 9	1
+REDMI A5	1
+Redmi note 10 pro	1
+Nothing phone	1
+BV9300 pro	1
+iPhone 12 pro max	1
+g 23	1
+Nothing Phone 3	1
+A 33	1
+V25	1
+TFY-LX3	1
+Redmi note 11 pro plus	1
+Reno 12	1
+Redmi Note 12	1
+iPhone 12 mini	1
+Hot30	1
+Redmi note 12s	1
+Motorola e32	1
+Redmi Note 12s	1
+Pixel 10 pro XL	1
+Edge 60 Pro	1
+iPhone 14 plus	1
+One	1
+Nothing Phone 2	1
+G41	1
+X8	1
+Pixel 10 pro	1
+Redmi note 14	1
+iPhone XS pro max	1
+Lite 10	1
+A77	1
+Moto g7 plus	1
+Nose	1
+Infinix Hot 30	1
+Redmi	1
+Rendmi 9A	1
+E5 plus	1
+Motog 52	1
+g100	1
+Galaxy S26 Ultra	1
+Xiaomi 14	1
+Xiaomi 14 Ultra	1
+GalaxyA55	1
+Xiaomi 15 ultra	1
+S23 Ultra	1
+g71 5G	1

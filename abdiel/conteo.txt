@@ -1,0 +1,388 @@
+Marca	Tiempo	Modelo	Capacidad	count
+Apple	0	iPhone 17	256	8
+Apple	1	iPhone 14	128	6
+Samsung	0	Galaxy A56	256	6
+Apple	0	iPhone 17 pro max	256	5
+Apple	2	iPhone 15 pro max	256	5
+Samsung	2	Galaxy S24 Ultra	256	5
+Apple	2	iPhone 15	256	4
+Apple	2	iPhone 14	128	4
+Apple	2	iPhone 13	128	4
+Apple	0	iPhone 14	128	3
+Apple	1	iPhone 15	256	3
+Apple	4	iPhone 11	64	3
+Xiaomi	2	POCO C65	256	3
+Apple	2	iPhone 15 pro	128	3
+Samsung	2	Galaxy A54	128	3
+Samsung	2	Galaxy A54	256	3
+Apple	1	iPhone 16	128	3
+Samsung	2	Galaxy S23 Ultra	256	3
+Apple	2	iPhone 12	128	3
+Apple	2	iPhone 16 pro max	256	2
+Samsung	2	Galaxy A15	128	2
+Apple	3	iPhone 14 pro	128	2
+Samsung	4	Galaxy A03S	64	2
+Apple	0	iPhone 17 pro max	512	2
+Oppo	0	Reno 14	256	2
+Apple	3	iPhone 11	128	2
+Honor	0	Honor 400 lite	256	2
+Samsung	3	Galaxy A14	128	2
+Realme	1	Realme 12+	256	2
+Apple	0	iPhone 16 pro	512	2
+Apple	3	iPhone 11	64	2
+Apple	0	iPhone 16 e	128	2
+Apple	3	iPhone 14	128	2
+Apple	1	iPhone 13	128	2
+Apple	3	iPhone 13	128	2
+Samsung	4	Galaxy A52	128	2
+Samsung	3	Galaxy A54	128	2
+Xiaomi	0	Poco F7	512	2
+Honor	2	X8A	128	2
+Samsung	2	Galaxy A55	128	2
+Xiaomi	2	Poco x6 pro	512	2
+Samsung	2	Galaxy A55	256	2
+Samsung	1	Galaxy A55	256	2
+Samsung	1	Galaxy A56	128	2
+Apple	0	iPhone 15 pro	256	2
+Apple	3	iPhone XR	64	2
+Apple	2	iPhone 14 pro	128	2
+Samsung	2	Galaxy S23	128	2
+Samsung	2	Galaxy S23 FE	128	2
+Samsung	3	Galaxy S23 Ultra	256	2
+Xiaomi	2	Redmi note 11	128	2
+Samsung	2	Galaxy S24	256	2
+Xiaomi	4	Redmi note 11	128	2
+Samsung	1	Galaxy S24	128	2
+Apple	2	iPhone 13	64	2
+Apple	0	iPhone 15 pro max	256	2
+Samsung	1	Galaxy S24 FE	256	2
+Oppo	1	Oppo A40	256	2
+Oppo	0	Oppo reno 14 f	256	2
+Xiaomi	0	Redmi Note 14 Pro	256	2
+Samsung	1	Galaxy S25	256	2
+Samsung	0	Galaxy S25 Ultra	1000	2
+Honor	3	Honor X7a	128	1
+Apple	1	iPhone 15 pro max	256	1
+Apple	2	iPhone 13 pro max	512	1
+Xiaomi	0	14T Pro	512	1
+Otra	2	Cubot P80	256	1
+Motorola	2	G60s	64	1
+Otra	0	Infinix	256	1
+Motorola	4	Moto edge 30 neo	32	1
+Motorola	4	G31	64	1
+Motorola	2	motorola edge 30	128	1
+Samsung	3	Galaxy A04	32	1
+Google Pixel	2	pixel 9 pro XL	256	1
+Otra	1	nubia Neo 2 5G	256	1
+Motorola	4	Moto G60	256	1
+Samsung	0	Galaxy A06	64	1
+Realme	0	Realme C75	256	1
+Huawei	3	HUAWEI Y9a	128	1
+Samsung	0	Galaxy A07	128	1
+Google Pixel	3	Pixel 6a	128	1
+Samsung	2	Galaxy A12	64	1
+Samsung	2	Galaxy A13	32	1
+Xiaomi	3	Mi 11T	128	1
+Apple	2	iPhone 12	256	1
+Samsung	4	Galaxy A14	128	1
+Oppo	2	A79	256	1
+Xiaomi	4	Mi 11T	256	1
+Vivo	1	Y28	256	1
+Apple	2	iPhone 16 pro	128	1
+Motorola	1	Moto g50	128	1
+Apple	3	iPhone 12	128	1
+Apple	3	iPhone 12	256	1
+Apple	2	iPhone 16 pro	512	1
+Xiaomi	3	Note 10s	128	1
+Apple	0	iPhone 12	128	1
+Samsung	1	Galaxy A15	128	1
+Samsung	0	Galaxy A16	64	1
+Xiaomi	2	Note 12s	256	1
+Samsung	1	Galaxy A16	128	1
+Samsung	0	Galaxy A16	256	1
+Otra	4	Poco m5s	64	1
+Samsung	0	Galaxy A17	256	1
+Honor	2	Honor x8b	128	1
+Apple	0	iPhone 13	32	1
+Samsung	4	Galaxy A25	128	1
+Xiaomi	2	Note 13 pro	128	1
+Apple	0	iPhone 17 pro max	2000	1
+Samsung	4	Galaxy A32	128	1
+Xiaomi	4	Note S10	128	1
+Otra	3	M3pro 5g	128	1
+Oppo	1	Reno f13	128	1
+Apple	0	iPhone 11	128	1
+Samsung	2	Galaxy A34	128	1
+Motorola	2	Moto G54 Plus	128	1
+Motorola	2	moto g82 5G	64	1
+Samsung	3	Galaxy A34	128	1
+Samsung	4	Galaxy A35	128	1
+Motorola	1	G84	256	1
+Samsung	2	Galaxy A35	64	1
+Apple	3	iPhone 13	256	1
+Samsung	3	Galaxy A35	128	1
+Apple	2	iphone 15 pro max	256	1
+Realme	2	A5 Pro	256	1
+Samsung	1	Galaxy A36	256	1
+Motorola	2	G84	128	1
+Xiaomi	2	Poco F5 Pro	512	1
+Motorola	0	motorola edge 60 fusion	256	1
+Samsung	0	Galaxy A36	32	1
+Samsung	4	Galaxy A50	128	1
+Samsung	3	Galaxy A50	64	1
+Huawei	4	Nova Y60	64	1
+Samsung	3	Galaxy A51	128	1
+Xiaomi	3	Poco F5 Pro	512	1
+Apple	2	iPhone 16	128	1
+Samsung	2	Galaxy A52	64	1
+Vivo	1	V30 lite	256	1
+Samsung	2	Galaxy A52	128	1
+Apple	2	iPhone 13 pro	128	1
+Apple	2	iPhone 15 pro max	512	1
+Samsung	3	Galaxy A52	128	1
+Xiaomi	2	Poco F6	512	1
+Apple	3	IPhone 13	256	1
+Apple	0	iPhone SE 2022	64	1
+Motorola	0	moto g56 5G	256	1
+Xiaomi	2	Poco F6 Pro	512	1
+Motorola	2	moto g05	32	1
+Samsung	3	Galaxy A52 S	128	1
+Samsung	0	Galaxy A53	64	1
+Samsung	1	Galaxy A53	128	1
+Samsung	0	Galaxy A53	128	1
+Honor	1	Honor Xc8	512	1
+Otra	2	iPhone 13	128	1
+Motorola	2	Moto g53	128	1
+Asus	1	S25 Ultra	512	1
+Google Pixel	2	Pixel 9	128	1
+Apple	0	iPhone 16	64	1
+Oppo	4	Reno 7	128	1
+Realme	4	Realame 9i	128	1
+Huawei	0	Nova 13	512	1
+Samsung	3	Galaxy A54	256	1
+Google Pixel	4	Pixel 6	128	1
+Xiaomi	1	Poco F7	512	1
+Xiaomi	4	Poco m5s	256	1
+Xiaomi	1	Poco M6 Pro	256	1
+Samsung	1	Galaxy A54	256	1
+Xiaomi	3	Poco x3	64	1
+Oppo	2	A58	128	1
+Xiaomi	4	Poco X3 pro	256	1
+Oppo	1	G7	512	1
+Apple	1	iPhone 16 pro	512	1
+Xiaomi	3	Poco X4	256	1
+Motorola	0	EDGE 60 PLUS	128	1
+Apple	4	iPhone 12	64	1
+Xiaomi	3	Poco X5	128	1
+ZTE	2	Nubia Neo 2 G5	256	1
+Samsung	4	Galaxy A54	128	1
+Xiaomi	3	Poco X5	256	1
+Huawei	1	Nova 13 Pro	512	1
+Apple	0	iPhone Air	512	1
+Motorola	3	Edge 20	64	1
+Apple	1	iPhone 14 pro	128	1
+Motorola	2	moto g54	128	1
+Xiaomi	3	Poco X5 Pro	256	1
+Samsung	4	Galaxy A54	256	1
+Samsung	4	Galaxy A55	256	1
+Honor	2	X6	128	1
+Xiaomi	4	Poco x6 pro	512	1
+Apple	1	iPhone 11	64	1
+Otra	1	Nothing Phone 3a	256	1
+Motorola	4	g13	128	1
+Google Pixel	0	Pixel 7	128	1
+Motorola	3	Edge 40 Neo	256	1
+Samsung	1	Galaxy A55	128	1
+Motorola	2	Moto G55	256	1
+Motorola	2	Motorola edge 40 pro	256	1
+Huawei	3	Huawei P60 Pro	256	1
+Apple	0	iPhone 11	64	1
+Motorola	1	G24	32	1
+Apple	3	IPhone 11	64	1
+Otra	0	Poco M5S	256	1
+Samsung	1	Galaxy A56	64	1
+Motorola	2	Motorola G57	256	1
+Apple	2	iPhone 13 pro max	256	1
+Apple	1	IPhone 16	256	1
+Oppo	4	Oppo reno lite 2	64	1
+Apple	4	iPhone 14 pro	128	1
+Oppo	2	Oppo A78	256	1
+Samsung	1	Galaxy A56	256	1
+Apple	1	iPhone 16 pro max	1000	1
+Apple	0	iPhone 12	64	1
+Xiaomi	0	Poco x7	512	1
+Xiaomi	2	Poco x7	256	1
+Apple	2	iPhone 15	128	1
+Xiaomi	1	Poco x7 pro	256	1
+Honor	1	Honor x8b	512	1
+ZTE	1	Blade A54	128	1
+Huawei	0	Mate pad 11.5	64	1
+Apple	4	IPhone 11	128	1
+Xiaomi	2	Poco x7 pro	512	1
+Xiaomi	0	Poco x7 pro	512	1
+Samsung	1	Galaxy A60	128	1
+Xiaomi	3	Poco x7 pro	32	1
+Samsung	4	Galaxy A71	128	1
+Apple	0	iPhone 16	128	1
+Honor	0	Honor 50	128	1
+Apple	3	iPhone 12	64	1
+Samsung	2	Galaxy M53	128	1
+Motorola	2	G42	32	1
+Xiaomi	0	POCO X9 pro	512	1
+Apple	2	iPhone 14	256	1
+Apple	0	iPhone 16	1000	1
+Otra	0	Poco	256	1
+Honor	0	Honor magic 8 lite	512	1
+Honor	0	Honor X6C	256	1
+Motorola	2	Moto g15	256	1
+Otra	0	POCO	256	1
+Samsung	2	Galaxy M55	128	1
+Oppo	1	Oppo reno 12	256	1
+Samsung	4	Galaxy Note 9	128	1
+Apple	4	iPhone 11 pro	256	1
+Otra	1	Poco M7 pro	256	1
+Apple	1	iPhone 16 pro	256	1
+Samsung	4	Galaxy S10	64	1
+Honor	2	Honor magic 5 lite	256	1
+Samsung	4	Galaxy S20+	128	1
+Samsung	2	Galaxy S20+	64	1
+Oppo	4	A15	32	1
+Apple	0	iPhone 14	256	1
+Apple	2	iPhone 11	64	1
+Samsung	3	Galaxy S21	128	1
+Motorola	2	Motorola G34	256	1
+Oppo	2	A56	128	1
+Honor	0	Honor X6b	128	1
+Oppo	1	Oppo reno 12	512	1
+Apple	3	iPhone 16	256	1
+Samsung	4	Galaxy S21	256	1
+Samsung	4	Galaxy S21 FE	256	1
+Motorola	2	Moto edge 50 fusion	256	1
+Otra	1	VI65PB1401NA	64	1
+Apple	1	iPhone 15	128	1
+Otra	2	RMO-NX3	256	1
+Xiaomi	3	Redmi 10	128	1
+Realme	0	Realme 12+	128	1
+Honor	1	Honor magic 6 lite	256	1
+Xiaomi	4	Redmi 10 pro	128	1
+Samsung	1	Galaxy S22	256	1
+Honor	1	Honor 300	256	1
+Otra	0	Nothing Phone	256	1
+Samsung	2	Galaxy S22 Ultra	256	1
+Samsung	1	Galaxy S23	512	1
+Xiaomi	2	Redmi 13 pro	128	1
+Xiaomi	2	Redmi 13c	128	1
+Xiaomi	2	Redmi 14	128	1
+Apple	1	iphone 15 pro max	256	1
+Apple	3	iphone 14 pro max	256	1
+Samsung	1	Galaxy S23 FE	256	1
+Samsung	2	Galaxy S23 FE	64	1
+Motorola	2	g 04	128	1
+Xiaomi	1	Redmi 14C	256	1
+Xiaomi	0	Redmi 15	256	1
+Xiaomi	4	Redmi 9	64	1
+Xiaomi	1	REDMI A5	64	1
+Xiaomi	4	Redmi note 10 pro	128	1
+Otra	0	Nothing phone	32	1
+Motorola	3	Moto g15	128	1
+Apple	1	iPhone 16 pro max	256	1
+Samsung	3	Galaxy S23 Ultra	512	1
+Apple	2	iPhone 12	64	1
+Otra	1	BV9300 pro	64	1
+Apple	3	iPhone 14 pro max	128	1
+Apple	4	iPhone 16 pro max	512	1
+Apple	4	iPhone 12 pro max	128	1
+Motorola	3	g 23	32	1
+Samsung	0	Galaxy S24	128	1
+Samsung	3	Galaxy S24	128	1
+Apple	1	iPhone 16 pro max	128	1
+Samsung	1	Galaxy S24	64	1
+Otra	1	Infinix	256	1
+Samsung	3	Galaxy S24	64	1
+Otra	1	Nothing Phone 3	512	1
+Samsung	3	Galaxy S24	256	1
+Xiaomi	2	Redmi note 11 pro	256	1
+Otra	0	Poco x6 pro	256	1
+Motorola	0	A 33	256	1
+Xiaomi	4	Redmi note 11 pro	32	1
+Vivo	0	V25	256	1
+Honor	4	TFY-LX3	128	1
+Xiaomi	0	Redmi note 11 pro plus	256	1
+Apple	4	iPhone 14 pro max	256	1
+Oppo	2	Reno 12	256	1
+Xiaomi	4	Redmi Note 12	128	1
+Apple	1	iPhone 12 mini	64	1
+Xiaomi	3	Redmi note 12 pro	128	1
+Otra	2	Hot30	128	1
+Xiaomi	3	Redmi note 12 pro	256	1
+Honor	2	Honor magic 6 lite	256	1
+Samsung	0	Galaxy S24 FE	128	1
+Xiaomi	3	Redmi note 12s	256	1
+Motorola	4	Moto g50	128	1
+Motorola	3	Motorola e32	32	1
+Xiaomi	3	Redmi Note 12s	64	1
+Samsung	2	Galaxy S24 FE	256	1
+Oppo	1	Oppo Reno 10	2000	1
+Oppo	2	Oppo Reno 10	256	1
+Google Pixel	0	Pixel 10 pro XL	128	1
+Motorola	0	Edge 60 Pro	256	1
+Apple	0	iPhone 13	128	1
+Xiaomi	2	Redmi note 13	256	1
+Xiaomi	2	Redmi note 13	128	1
+Apple	2	iPhone 14 plus	256	1
+Apple	2	iPhone XR	64	1
+Motorola	2	One	128	1
+Otra	2	Nothing Phone 2	512	1
+Xiaomi	1	Redmi note 13 pro	128	1
+Apple	2	iPhone SE 2022	64	1
+Motorola	1	G41	128	1
+Xiaomi	1	Redmi note 13 pro	256	1
+Honor	4	X8	128	1
+Xiaomi	2	Redmi note 13 pro	512	1
+Samsung	1	Galaxy S24 Ultra	1000	1
+Samsung	1	Galaxy S24 Ultra	128	1
+Google Pixel	0	Pixel 10 pro	512	1
+Samsung	1	Galaxy S24 Ultra	256	1
+Motorola	2	Edge 40 Neo	128	1
+Samsung	0	Galaxy S24 Ultra	256	1
+Xiaomi	0	Redmi note 14	128	1
+Apple	0	iPhone XS pro max	256	1
+Apple	2	iPhone 13	256	1
+Honor	4	Lite 10	32	1
+Samsung	2	Galaxy S24+	512	1
+Xiaomi	2	Redmi Note 14 Pro	128	1
+Apple	0	iPhone 15	128	1
+Samsung	2	Galaxy S24+	256	1
+Oppo	1	A77	256	1
+Samsung	2	Galaxy S25	256	1
+Samsung	0	Galaxy S25	256	1
+Oppo	2	Oppo reno 12	128	1
+Samsung	0	Galaxy S25 FE	128	1
+Samsung	0	Galaxy S25 FE	64	1
+Motorola	4	Moto g7 plus	64	1
+Samsung	1	Galaxy S25 Ultra	256	1
+Otra	0	Nose	512	1
+Otra	3	Infinix Hot 30	128	1
+Samsung	0	Galaxy S25 Ultra	512	1
+Otra	2	Redmi	512	1
+Xiaomi	3	Rendmi 9A	64	1
+Samsung	1	Galaxy S25 Ultra	512	1
+Motorola	2	E5 plus	256	1
+Motorola	2	Motog 52	64	1
+Motorola	2	Moto edge 30 neo	256	1
+Motorola	0	g100	256	1
+Samsung	0	Galaxy S26 Ultra	512	1
+Apple	0	iPhone 13 pro max	128	1
+Apple	1	iPhone 16	256	1
+Xiaomi	1	Xiaomi 14	256	1
+Samsung	0	Galaxy Z Flip 6	256	1
+Samsung	1	Galaxy Z Flip 6	512	1
+Apple	3	iPhone 14 pro	1000	1
+Samsung	2	Galaxy Z Flip 6	256	1
+Apple	1	iPhone 11	128	1
+Xiaomi	1	Xiaomi 14 Ultra	512	1
+Samsung	2	GalaxyA55	128	1
+Xiaomi	1	Xiaomi 15 ultra	512	1
+Samsung	3	S23 Ultra	256	1
+Motorola	3	g71 5G	128	1
+Apple	2	iPhone 16	256	1
